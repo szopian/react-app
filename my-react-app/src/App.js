@@ -6,16 +6,28 @@ class App extends Component {
     super();
 
     this.state = {
-      string: "Hey you!",
+      workers: [
+        {
+          name: "Leon",
+          id: 1,
+        },
+        {
+          name: "Johnny",
+          id: 2,
+        },
+        {
+          name: "Cliff",
+          id: 3,
+        },
+      ],
     };
   }
   render() {
     return (
       <div className="App">
-        <h1>{this.state.string}</h1>
-        <button onClick={() => this.setState({ string: "Hey me!" })}>
-          Change Text
-        </button>
+        {this.state.workers.map((worker) => (
+          <h1 key={worker.id}>{worker.name}</h1>
+        ))}
       </div>
     );
   }
