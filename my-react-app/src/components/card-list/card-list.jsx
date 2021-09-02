@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "../card/card";
 import "./card-list.css";
 
 export const CardList = (props) => {
@@ -6,7 +7,7 @@ export const CardList = (props) => {
   return (
     <div className="card-list">
       {props.workers.map((worker) => (
-        <h1 key={worker.id}>{worker.name}</h1>
+        <Card key={worker.id} worker={worker} />
       ))}
     </div>
   );
