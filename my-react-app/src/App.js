@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { CardList } from "./components/card-list/card-list";
 
+import "./App.css";
 class App extends Component {
   constructor() {
     super();
@@ -18,18 +19,19 @@ class App extends Component {
   }
 
   render() {
+    const { workers, searchField } = this.state;
+    const filterdWorkers = workers.filter((worker) =>
+      worker.name.toLowerCase().includes(searchField.toLowerCase())
+    );
+
     return (
       <div className="App">
         <input
           type="search"
           placeholder="search workers"
-          onChange={(e) =>
-            this.setState({ searchFiled: e.target.value }, () =>
-              console.log(this.state)
-            )
-          }
+          onChange={(e) => this.setState({ searchField: e.target.value })}
         />
-        <CardList workers={this.state.workers} />
+        <CardList workers={filterdWorkers} />
       </div>
     );
   }
