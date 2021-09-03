@@ -7,6 +7,7 @@ class App extends Component {
 
     this.state = {
       workers: [],
+      searchField: "",
     };
   }
 
@@ -19,6 +20,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <input
+          type="search"
+          placeholder="search workers"
+          onChange={(e) =>
+            this.setState({ searchFiled: e.target.value }, () =>
+              console.log(this.state)
+            )
+          }
+        />
         <CardList workers={this.state.workers} />
       </div>
     );
