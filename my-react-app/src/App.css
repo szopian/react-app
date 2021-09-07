@@ -9,5 +9,6 @@ body {
 h1 {
   font-family: "Bigelow Rules";
   font-size: 72px;
-  color: #0ccac4;
+  font-family: "Permanent Marker", cursive;
+  color: rgba(0, 0, 0, 0.7);
 }
