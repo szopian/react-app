@@ -12,7 +12,7 @@ class App extends Component {
       searchField: "",
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -21,9 +21,9 @@ class App extends Component {
       .then((users) => this.setState({ workers: users }));
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({ searchField: e.target.value });
-  }
+  };
 
   render() {
     const { workers, searchField } = this.state;
@@ -33,6 +33,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1></h1>
         <SearchBox
           placeholder="search workers"
           handleChange={this.handleChange}
