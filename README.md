@@ -1,3 +1,3 @@
 # worker-search-react-app
 
-<img src="" />
+<img src="./my-react-app/src/images/img.png" />
